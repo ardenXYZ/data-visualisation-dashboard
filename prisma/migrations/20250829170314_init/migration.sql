@@ -9,8 +9,7 @@ CREATE TABLE "public"."User" (
 
 -- CreateTable
 CREATE TABLE "public"."Product" (
-    "id" SERIAL NOT NULL,
-    "productId" TEXT NOT NULL,
+    "id" TEXT NOT NULL,
     "productName" TEXT NOT NULL,
     "openingInventory" DOUBLE PRECISION NOT NULL,
 
@@ -20,7 +19,7 @@ CREATE TABLE "public"."Product" (
 -- CreateTable
 CREATE TABLE "public"."DailyTransaction" (
     "id" SERIAL NOT NULL,
-    "productId" INTEGER NOT NULL,
+    "productId" TEXT NOT NULL,
     "day" INTEGER NOT NULL,
     "type" TEXT NOT NULL,
     "quantity" DOUBLE PRECISION NOT NULL,
@@ -31,9 +30,6 @@ CREATE TABLE "public"."DailyTransaction" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "public"."User"("username");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Product_productId_key" ON "public"."Product"("productId");
 
 -- CreateIndex
 CREATE INDEX "DailyTransaction_productId_day_idx" ON "public"."DailyTransaction"("productId", "day");
