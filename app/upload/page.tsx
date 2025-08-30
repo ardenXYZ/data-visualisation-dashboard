@@ -10,8 +10,8 @@ export default function UploadPage() {
   const { pending } = useFormStatus();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4 py-12">
-      <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-lg md:p-8">
+    <div className="flex min-h-screen items-center justify-center from-blue-50 to-indigo-100 px-4 py-12">
+      <div className="w-full max-w-md rounded-2xl p-6 shadow-lg md:p-8">
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-2">
             Upload Excel File
@@ -24,9 +24,9 @@ export default function UploadPage() {
 
         <form
           action={uploadExcel}
-          className="flex flex-col gap-4 sm:flex-row sm:items-center"
+          className="flex flex-col gap-1 sm:flex-row sm:items-center"
         >
-          <div className="flex-1">
+          <div className="w-full sm:w-[70%]">
             <input
               type="file"
               accept=".xlsx,.xls"
