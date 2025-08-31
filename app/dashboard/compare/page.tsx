@@ -1,4 +1,4 @@
-import CompareProducts from "@/ui/compare-products";
+import CompareProducts from "@/app/ui/compare-products";
 import { Suspense } from "react";
 
 export default function Page() {

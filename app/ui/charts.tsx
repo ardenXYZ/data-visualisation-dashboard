@@ -1,4 +1,7 @@
-import { fetchProductCount, fetchProductsWithTransactions } from "@/lib/data";
+import {
+  fetchProductCount,
+  fetchProductsWithTransactions,
+} from "@/app/lib/data";
 import SingleChart from "./single-chart";
 
 export default async function ChartWrapper() {

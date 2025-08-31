@@ -1,4 +1,7 @@
-import { fetchProductCount, fetchProductsWithTransactions } from "@/lib/data";
+import {
+  fetchProductCount,
+  fetchProductsWithTransactions,
+} from "@/app/lib/data";
 import ProductSelector from "./product-selector";
 import CompareChart from "./compare-chart";
 

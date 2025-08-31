@@ -1,9 +1,11 @@
 'use server';
 
 import xlsx from 'node-xlsx';
-import prisma from '@/lib/prisma';
+import prisma from '@/app/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { signIn, signOut } from '@/auth';
+import { AuthError } from 'next-auth';
 
 const COLUMN_MAPPING: { [key: string]: string } = {
     'ID': 'productId',
@@ -53,8 +55,8 @@ export async function uploadExcel(formData: FormData) {
         console.log(error);
     }
 
-    revalidatePath('/');
-    redirect('/');
+    revalidatePath('/dashboard');
+    redirect('/dashboard');
 }
 
 async function processProductData(rowData: { [key: string]: string }) {
@@ -120,4 +122,27 @@ async function processDayData(
             },
         });
     }
+}
+
+export async function authenticate(
+    prevState: string | undefined,
+    formData: FormData,
+) {
+    try {
+        await signIn('credentials', formData);
+    } catch (error) {
+        if (error instanceof AuthError) {
+            switch (error.type) {
+                case 'CredentialsSignin':
+                    return 'Invalid credentials.';
+                default:
+                    return 'Something went wrong.';
+            }
+        }
+        throw error;
+    }
+}
+
+export async function signOutAction() {
+    await signOut({ redirectTo: "/" });
 }

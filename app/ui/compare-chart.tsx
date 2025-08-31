@@ -13,8 +13,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { ProductWithTransactions } from "@/lib/data";
-import { buildProductChartData } from "@/lib/utils";
+import { ProductWithTransactions } from "@/app/lib/data";
+import { buildProductChartData } from "@/app/lib/utils";
 
 ChartJS.register(
   CategoryScale,

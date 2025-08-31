@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductWithTransactions } from "@/lib/data";
+import { ProductWithTransactions } from "@/app/lib/data";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function ProductSelector({

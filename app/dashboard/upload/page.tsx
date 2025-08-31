@@ -1,7 +1,7 @@
 "use client";
 
-import { uploadExcel } from "@/lib/actions";
-import SubmitButton from "@/ui/submit-button";
+import { uploadExcel } from "@/app/lib/actions";
+import SubmitButton from "@/app/ui/submit-button";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";
 

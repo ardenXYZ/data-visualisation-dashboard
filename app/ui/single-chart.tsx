@@ -1,7 +1,7 @@
 "use client";
 
-import { ProductWithTransactions } from "@/lib/data";
-import { buildProductChartData } from "@/lib/utils";
+import { ProductWithTransactions } from "@/app/lib/data";
+import { buildProductChartData } from "@/app/lib/utils";
 import {
   Chart as ChartJS,
   CategoryScale,
