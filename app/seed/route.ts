@@ -16,7 +16,7 @@ export async function GET() {
         });
 
         return Response.json({ message: 'Test user seeded successfully' });
-    } catch (error: any) {
+    } catch (error: unknown) {
         return Response.json({ error }, { status: 500 });
     }
 }
